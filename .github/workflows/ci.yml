@@ -1,4 +1,4 @@
-name: CI
+name: CI_CD
 on:
   pull_request:
     branches: [develop, main]
@@ -45,11 +45,16 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to Staging
-        if: github.event_name == 'push'
+      - name: Deploy to Production
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: dswistowski/surge-sh-action@v1
         with:
           domain: "my-ci-cd.surge.sh"
           project: "./dist/ng-rx-todo"
           login: ${{ secrets.SURGE_LOGIN }}
           token: ${{ secrets.SURGE_TOKEN }}
+      - name: Upload Coverage Reports
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npx codecov
+        env:
+          CODECOV_TOKEN: db97c54d-e02c-4f46-8e9b-83e0c2ebdecc
