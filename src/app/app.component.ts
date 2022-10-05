@@ -51,6 +51,6 @@ export class AppComponent implements OnInit {
 
   holdHandler(e: number) {
     this.progress = e / 10;
-    console.log(this.progress);
+    console.log(this.progress, e);
   }
 }
