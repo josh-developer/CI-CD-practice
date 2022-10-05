@@ -21,8 +21,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "16.14.x"
-      - run: npm ci
-      - run: npm run format:check
+      - name: Install packages
+        run: npm ci
+      - name: Check format
+        run: npm run format:check
+      - name: Linting
+        run: npm run lint
       - run: npm run test-headless
         env:
           CI: true
