@@ -26,11 +26,10 @@ export class TodoItemComponent {
       })
       .afterClosed()
       .subscribe((result) => {
-        if (result) {
+        if (result)
           this.store.dispatch(
             removeTodo({ index: this.index, todo: this.todo })
           );
-        }
       });
   }
 

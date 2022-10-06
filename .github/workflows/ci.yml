@@ -20,10 +20,14 @@ jobs:
         with:
           node-version: "16.14.x"
       - run: npm ci
-      - run: npm run format:check
-      - run: npm run test-headless
+      - name: Check Format
+        run: npm run format:check
+      - name: Test
+        run: npm run test-headless
         env:
           CI: true
+      - name: Linting
+        run: npm run lint
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v3
         with:
