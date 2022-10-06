@@ -1,10 +1,10 @@
 name: CI_CD
 on:
-  pull_request:
-    branches: [develop, main]
+  push:
+    branches: [main]
 
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,21 +20,16 @@ jobs:
         with:
           node-version: "16.14.x"
       - run: npm ci
-      - run: npm run format:check
-      - run: npm run test-headless
-        env:
-          CI: true
-      - name: Upload Test Coverage
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage
-          path: coverage
       - name: Build Project
-        if: github.event_name == 'push'
         run: npm run build
-      - name: Upload Build Folder
-        if: github.event_name == 'push'
-        uses: actions/upload-artifact@v3
+      - name: Create a Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Production
+        uses: dswistowski/surge-sh-action@v1
         with:
-          name: build
-          path: dist/ng-rx-todo
+          domain: "my-ci-cd.surge.sh"
+          project: "./dist/ng-rx-todo"
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}
