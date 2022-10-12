@@ -1,4 +1,3 @@
-/* eslint-disable @angular-eslint/template/no-negated-async */
 import { Component } from "@angular/core";
 import { LoaderService } from "../shared/loader/loader.service";
 
@@ -12,7 +11,7 @@ import { LoaderService } from "../shared/loader/loader.service";
         *ngIf="loaderService.loader | async"
       ></mat-spinner>
 
-      <div id="lists-wrapper" *ngIf="!(loaderService.loader | async)">
+      <div id="lists-wrapper" *ngIf="(loaderService.loader | async) === true">
         <router-outlet></router-outlet>
       </div>
     </div>
