@@ -14,7 +14,7 @@
     "lint": "ng lint"
   },
   "hooks": {
-    "pre-commit": "npm run lint --max-warnings=0 & npm run format:write"
+    "pre-commit": "npm run lint --max-warnings=1 & npm run format:write"
   },
   "private": true,
   "dependencies": {
