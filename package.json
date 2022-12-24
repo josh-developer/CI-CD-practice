@@ -14,7 +14,7 @@
     "lint": "ng lint"
   },
   "hooks": {
-    "pre-commit": "npm run format:write"
+    "pre-commit": "npm run format:write & ng lint"
   },
   "private": true,
   "dependencies": {
