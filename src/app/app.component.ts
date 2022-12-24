@@ -6,9 +6,6 @@ import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { AlertService } from "./shared/alert/alert.service";
 
-const a = 1;
-a = 123;
-
 @UntilDestroy()
 @Component({
   selector: "app-root",
