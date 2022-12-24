@@ -19,7 +19,7 @@
   "lint-staged": {
     "**/*.{ts,html,scss}": [
       "npx prettier --write",
-      "npm run lint --max-warnings=0"
+      "npm run lint --max-warnings=1"
     ]
   },
   "private": true,
