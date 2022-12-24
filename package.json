@@ -14,13 +14,7 @@
     "lint": "ng lint"
   },
   "hooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "**/*.{ts,html,scss}": [
-      "npx prettier --write",
-      "npm run lint --max-warnings=1"
-    ]
+    "pre-commit": "npm run prettier --write"
   },
   "private": true,
   "dependencies": {
