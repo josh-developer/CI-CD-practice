@@ -1,10 +1,13 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { select, Store } from "@ngrx/store";
 import { AppState } from "./shared/interfaces/appState";
 import { TODOS_LOCAL_NAME } from "./todos/todo-store/todo.reducers";
 import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { AlertService } from "./shared/alert/alert.service";
+
+const a = 1;
+a = 2;
 
 @UntilDestroy()
 @Component({
