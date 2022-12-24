@@ -14,7 +14,13 @@
     "lint": "ng lint"
   },
   "hooks": {
-    "pre-commit": "npm run lint --max-warnings=1 & npm run format:write"
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{ts,html,scss}": [
+      "npx prettier --write",
+      "npm run lint"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -59,6 +65,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lint-staged": "^13.1.0",
     "nx": "14.4.1",
     "prettier": "2.7.1",
     "pretty-quick": "^3.1.3",
