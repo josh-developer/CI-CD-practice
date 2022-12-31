@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  openSnackBar(msg: string, type: "success" | "error" | "info") {
+  openSnackBar(msg: string, type: "success" | "error" | "info"): void {
     this._snackBar.open(msg, "Okay", {
       duration: 5000,
       horizontalPosition: "center",
