@@ -19,6 +19,6 @@ describe("TodosComponent", () => {
   });
 
   it("should create component", () => {
-    expect(component).toBeFalsy();
+    expect(component).toBeTruthy();
   });
 });
