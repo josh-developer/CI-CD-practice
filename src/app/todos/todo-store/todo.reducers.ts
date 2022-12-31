@@ -13,12 +13,12 @@ const initialTodos: ITodo[] = savedTodos || [];
 export const todoReducer = createReducer(
   initialTodos,
   on(addTodoSuccess, (todos, newState) => {
-    todos = JSON.parse(JSON.stringify(todos));
-    return [...todos, newState.todo];
+    const newTodos = JSON.parse(JSON.stringify(todos));
+    return [...newTodos, newState.todo];
   }),
   on(removeTodoSuccess, (todos, removeIndex) => {
-    todos = JSON.parse(JSON.stringify(todos));
-    return todos.filter((_, index) => index !== removeIndex.index);
+    const newTodos: ITodo[] = JSON.parse(JSON.stringify(todos));
+    return newTodos.filter((_, index) => index !== removeIndex.index);
   }),
   on(editTodoSuccess, (todos, { index, todo }) => {
     const newState = JSON.parse(JSON.stringify(todos));
