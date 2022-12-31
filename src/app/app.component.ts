@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { select, Store } from "@ngrx/store";
 import { AppState } from "./shared/interfaces/appState";
 import { TODOS_LOCAL_NAME } from "./todos/todo-store/todo.reducers";
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  openSnackBar(msg: string, type: "success" | "error" | "info") {
+  openSnackBar(msg: string, type: "success" | "error" | "info"): void {
     this._snackBar.open(msg, "Okay", {
       duration: 5000,
       horizontalPosition: "center",

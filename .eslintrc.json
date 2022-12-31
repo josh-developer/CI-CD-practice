@@ -12,7 +12,64 @@
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
-      "rules": {}
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "off",
+          { "type": "element", "prefix": ["app"], "style": "kebab-case" }
+        ],
+        "@angular-eslint/directive-selector": [
+          "off",
+          { "type": "attribute", "prefix": ["app"], "style": "camelCase" }
+        ],
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            "selector": "default",
+            "leadingUnderscore": "allow",
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+          }
+        ],
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+        "@typescript-eslint/quotes": [
+          "off",
+          "single",
+          {
+            "allowTemplateLiterals": true
+          }
+        ],
+        "@typescript-eslint/member-ordering": "off",
+        "arrow-body-style": "off",
+        "arrow-parens": ["off", "always"],
+        "brace-style": ["off", "off"],
+        "complexity": "error",
+        "eol-last": "off",
+        "id-blacklist": "off",
+        "id-match": "off",
+        "linebreak-style": "off",
+        "max-len": "off",
+        "new-parens": "off",
+        "newline-per-chained-call": "off",
+        "no-duplicate-case": "error",
+        "no-irregular-whitespace": "off",
+        "no-param-reassign": "error",
+        "no-redeclare": "error",
+        "no-throw-literal": "off",
+        "no-trailing-spaces": "off",
+        "no-underscore-dangle": "off",
+        "prefer-object-spread": "error",
+        "quote-props": "off",
+        "space-before-function-paren": "off",
+        "space-in-parens": ["off", "never"]
+      }
     },
     {
       "files": ["*.html"],
