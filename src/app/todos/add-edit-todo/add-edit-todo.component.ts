@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { select, Store } from "@ngrx/store";
 import { take } from "rxjs";
@@ -7,11 +12,23 @@ import { ROUTER_DATA, ROUTER_PARAMS } from "src/app/app-routing.module";
 import { AppState } from "src/app/shared/interfaces/appState";
 import { ITodo } from "src/app/shared/interfaces/todo";
 import { addTodo, editTodo } from "src/app/todos/todo-store/todo.actions";
+import { MatButtonModule } from "@angular/material/button";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 @Component({
   selector: "add-edit-todo",
   templateUrl: "./add-edit-todo.component.html",
   styleUrls: ["./add-edit-todo.component.scss"],
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatButtonModule,
+  ],
 })
 export class AddEditTodoComponent implements OnInit {
   todoForm!: FormGroup;

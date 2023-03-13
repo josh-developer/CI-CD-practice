@@ -8,7 +8,7 @@ describe("TodosChartComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodosChartComponent],
+      imports: [TodosChartComponent],
       providers: [provideMockStore({})],
     }).compileComponents();
 

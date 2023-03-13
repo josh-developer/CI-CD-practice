@@ -1,17 +1,15 @@
 import { Component } from "@angular/core";
-import { LoaderService } from "../shared/loader/loader.service";
+import { RouterOutlet } from "@angular/router";
+import { TodoListsHeaderComponent } from "./todo-lists-header/todo-lists-header.component";
 
 @Component({
   selector: "todos",
   template: `
     <div id="todos-wrapper">
       <todo-lists-header></todo-lists-header>
-      <mat-spinner
-        [diameter]="55"
-        *ngIf="loaderService.loader | async"
-      ></mat-spinner>
-
-      <div id="lists-wrapper" *ngIf="(loaderService.loader | async) === true">
+      <!-- <mat-spinner [diameter]="55" *ngIf="loader"></mat-spinner> -->
+      <!-- *ngIf="loader" -->
+      <div id="lists-wrapper">
         <router-outlet></router-outlet>
       </div>
     </div>
@@ -34,7 +32,7 @@ import { LoaderService } from "../shared/loader/loader.service";
       }
     `,
   ],
+  standalone: true,
+  imports: [TodoListsHeaderComponent, RouterOutlet],
 })
-export class TodosComponent {
-  constructor(protected loaderService: LoaderService) {}
-}
+export class TodosComponent {}

@@ -8,7 +8,7 @@ describe("TodoListsComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodoListsComponent],
+      imports: [TodoListsComponent],
       providers: [provideMockStore({})],
     }).compileComponents();
 

@@ -8,7 +8,7 @@ describe("WeekChartComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WeekChartComponent],
+      imports: [WeekChartComponent],
       providers: [provideMockStore({})],
     }).compileComponents();
 

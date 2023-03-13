@@ -25,6 +25,7 @@ import { AppState } from "src/app/shared/interfaces/appState";
       }
     `,
   ],
+  standalone: true,
 })
 export class TodosChartComponent implements OnInit {
   constructor(private store: Store<AppState>) {}

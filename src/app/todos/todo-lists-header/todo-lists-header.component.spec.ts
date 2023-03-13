@@ -8,7 +8,7 @@ describe("TodoListsHeaderComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodoListsHeaderComponent],
+      imports: [TodoListsHeaderComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TodoListsHeaderComponent);

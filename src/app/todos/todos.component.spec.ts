@@ -9,7 +9,7 @@ describe("TodosComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodosComponent],
+      imports: [TodosComponent],
       providers: [provideMockStore({})],
     }).compileComponents();
 

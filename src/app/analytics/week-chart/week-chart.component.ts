@@ -28,6 +28,7 @@ import { ITodo } from "src/app/shared/interfaces/todo";
     `,
   ],
   providers: [DatePipe],
+  standalone: true,
 })
 export class WeekChartComponent implements AfterViewInit {
   constructor(private store: Store<AppState>, private datePipe: DatePipe) {}

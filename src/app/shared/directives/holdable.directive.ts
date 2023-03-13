@@ -3,6 +3,7 @@ import { filter, interval, Observable, Subject, takeUntil, tap } from "rxjs";
 
 @Directive({
   selector: "[holdable]",
+  standalone: true,
 })
 export class HoldableDirective {
   @Output() holdTime = new EventEmitter<number>();

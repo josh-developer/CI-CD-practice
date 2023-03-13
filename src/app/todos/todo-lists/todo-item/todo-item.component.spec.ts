@@ -15,8 +15,7 @@ describe("TodoItemComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TodoItemComponent],
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, TodoItemComponent],
       providers: [
         provideMockStore({}),
         MatDialogModule,
